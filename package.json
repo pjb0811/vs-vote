@@ -1,15 +1,18 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "dev": "next",
+    "start": "next",
     "build": "next build",
-    "start": "next start",
+    "serve": "yarn build && next start",
     "export": "yarn build && next export",
-    "deploy": "firebase deploy"
+    "deploy": "yarn build && next export && firebase deploy"
   },
   "dependencies": {
     "next": "^7.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0"
   }
 }
