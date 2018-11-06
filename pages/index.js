@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
-import Head from '../components/head';
-import Nav from '../components/nav';
 import axios from 'axios';
+import mainTemplate from '../components/templates/main';
 
 class Index extends Component {
-  static async getInitialProps(ctx) {
+  /* static async getInitialProps(ctx) {
     const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/1`);
 
     return {
       res: res.data
     };
-  }
+  } */
 
   render() {
     return (
@@ -22,4 +21,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default mainTemplate(Index);

@@ -12,10 +12,6 @@ class CustomApp extends App {
     };
   }
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { Component, pageProps, router } = this.props;
 
