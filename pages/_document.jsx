@@ -1,7 +1,7 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import antDesign from 'antd/dist/antd.min.css';
 import { ServerStyleSheet } from 'styled-components';
+import antDesign from 'antd/dist/antd.min.css';
 import customStyle from '../static/styles/index.less';
 
 class CustomDocument extends Document {
