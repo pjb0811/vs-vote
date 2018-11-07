@@ -2,6 +2,7 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import antDesign from 'antd/dist/antd.min.css';
 import { ServerStyleSheet } from 'styled-components';
+import customStyle from '../static/styles/index.less';
 
 class CustomDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -23,6 +24,7 @@ class CustomDocument extends Document {
             href="/static/favicon.ico"
           />
           <style dangerouslySetInnerHTML={{ __html: antDesign }} />
+          <style>{customStyle}</style>
           {this.props.styleTags}
         </Head>
         <body>

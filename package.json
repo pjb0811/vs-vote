@@ -18,6 +18,9 @@
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-inline-import": "^3.0.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "raw-loader": "^0.5.1",
     "styled-components": "^4.0.3"
   }
 }
