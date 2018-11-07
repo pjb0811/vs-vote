@@ -5,14 +5,14 @@ import styled from 'styled-components';
 
 const { Header, Content, Footer } = Layout;
 
-const StyledHeader = styled(Head)`
-  position: 'fixed';
+const StyledHeader = styled(Header)`
+  position: fixed;
   z-index: 1;
-  width: '100%';
+  width: 100%;
 `;
 
 const mainTemplate = Page => {
-  class MainWrapper extends React.Component {
+  return class MainWrapper extends React.Component {
     static async getInitialProps(ctx) {
       return {
         ...(Page.getInitialProps ? await Page.getInitialProps(ctx) : null)
@@ -52,9 +52,7 @@ const mainTemplate = Page => {
         </Layout>
       );
     }
-  }
-
-  return MainWrapper;
+  };
 };
 
 export default mainTemplate;

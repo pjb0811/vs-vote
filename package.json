@@ -1,5 +1,5 @@
 {
-  "name": "create-next-example-app",
+  "name": "vs-vote",
   "scripts": {
     "start": "next",
     "build": "next build",
@@ -7,13 +7,13 @@
     "export": "yarn build && next export",
     "deploy": "yarn build && next export && firebase deploy"
   },
+  "license": "ISC",
   "dependencies": {
     "next": "^7.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "antd": "^3.10.4",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",

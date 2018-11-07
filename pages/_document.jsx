@@ -1,11 +1,16 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import stylesheet from 'antd/dist/antd.min.css';
+import antDesign from 'antd/dist/antd.min.css';
+import { ServerStyleSheet } from 'styled-components';
 
-export default class CustomDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+class CustomDocument extends Document {
+  static getInitialProps({ renderPage }) {
+    const sheet = new ServerStyleSheet();
+    const page = renderPage(App => props =>
+      sheet.collectStyles(<App {...props} />)
+    );
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
   }
 
   render() {
@@ -17,7 +22,8 @@ export default class CustomDocument extends Document {
             type="image/x-icon"
             href="/static/favicon.ico"
           />
-          <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+          <style dangerouslySetInnerHTML={{ __html: antDesign }} />
+          {this.props.styleTags}
         </Head>
         <body>
           <Main />
@@ -27,3 +33,5 @@ export default class CustomDocument extends Document {
     );
   }
 }
+
+export default CustomDocument;
